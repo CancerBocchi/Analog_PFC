@@ -1,0 +1,84 @@
+{
+  "name": "PFC_3PH",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps",
+    "Core/APP",
+    "Core/lib",
+    "Core/Src",
+    "Core/TASK",
+    "Drivers/CMSIS/Device/ST/STM32G4xx/Source",
+    "Drivers/STM32G4xx_HAL_Driver/Src",
+    "Middlewares/ST/ARM/DSP/Lib"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [
+      {
+        "path": "startup_stm32g474xx.s"
+      }
+    ],
+    "folders": []
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "cd2335b750a574669a0a8d18790a7632"
+  },
+  "targets": {
+    "Debug": {
+      "excludeList": [],
+      "toolchain": "GCC",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "STM32G474RBTx_FLASH.ld",
+        "useCustomScatterFile": true,
+        "storageLayout": {
+          "RAM": [],
+          "ROM": []
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "ST",
+          "cpuName": "STM32G474RB"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          ".eide/deps",
+          "Core/Inc",
+          "Drivers/CMSIS/Include",
+          "Drivers/CMSIS/Device/ST/STM32G4xx/Include",
+          "Drivers/STM32G4xx_HAL_Driver/Inc",
+          "Core/APP",
+          "Core/lib",
+          "Core/TASK",
+          "Middlewares/ST/ARM/DSP/Inc"
+        ],
+        "libList": [
+          "Core/Inc"
+        ],
+        "sourceDirList": [],
+        "defineList": [
+          "USE_HAL_DRIVER",
+          "STM32G474xx",
+          "ARM_MATH_CM4"
+        ]
+      }
+    }
+  },
+  "version": "3.3"
+}
