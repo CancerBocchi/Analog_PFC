@@ -4,7 +4,8 @@
 #ifdef __HRTIM_H__
 void HAL_HRTIM_RegistersUpdateCallback(HRTIM_HandleTypeDef * hhrtim,uint32_t TimerIdx)//周期回调
 {
-    
+   //SPLL_lab1();
+    SPLL_lab1();
 }
 #endif
 
@@ -12,14 +13,12 @@ void HAL_HRTIM_RegistersUpdateCallback(HRTIM_HandleTypeDef * hhrtim,uint32_t Tim
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)//adc转换完后进入中断
 {
-    ADC_Conversion(&ADC_Value);
+    //HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+    //ADC_Conversion(&ADC_Value);
 }
 
 #endif
 
 #ifdef __TIM_H__
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)//adc转换完后进入中断
-{
 
-}
 #endif

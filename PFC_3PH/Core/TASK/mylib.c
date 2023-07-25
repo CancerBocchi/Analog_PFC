@@ -138,3 +138,25 @@ void IT_UART_printf(UART_HandleTypeDef*uartbase,const char *format,...)
 }
 
 #endif
+
+#ifdef __TIM_H__
+
+void Cancer_Delay_us(uint32_t us)
+{
+	__HAL_TIM_ENABLE(&TIMER);
+	int timebase = __HAL_TIM_GET_COUNTER(&TIMER);
+	while(__HAL_TIM_GetCounter(&TIMER)-timebase<us)
+	{}
+	__HAL_TIM_DISABLE(&TIMER);
+	
+}
+
+void Cancer_Delay_ms(uint32_t ms)
+{
+	for(int i =0;i<ms;i++)
+	{
+		Cancer_Delay_us(1000);
+	}
+}
+
+#endif

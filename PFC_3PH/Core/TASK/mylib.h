@@ -7,6 +7,8 @@
 #include "stdarg.h"
 #include "stdbool.h"
 #include "main.h"
+#include "usart.h"
+#include "tim.h"
 
 #ifndef PI
 #define PI 3.14159265358979323846
@@ -42,6 +44,11 @@ void Cancer_ADC_Real(uint16_t*adc_value,float*real_value,uint16_t num);
 void Block_UART_printf(UART_HandleTypeDef*uartbase,const char *format,...);
 void DMA_UART_printf(UART_HandleTypeDef*uartbase,const char *format,...);
 void IT_UART_printf(UART_HandleTypeDef*uartbase,const char *format,...);
+#endif
+
+#ifdef __TIM_H__
+void Cancer_Delay_ms(uint32_t ms);
+void Cancer_Delay_us(uint32_t us);
 #endif
 
 #ifdef __cplusplus

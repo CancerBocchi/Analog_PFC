@@ -9,12 +9,14 @@
     "Core/Src",
     "Core/TASK",
     "Drivers/CMSIS/Device/ST/STM32G4xx/Source",
-    "Drivers/STM32G4xx_HAL_Driver/Src",
-    "Middlewares/ST/ARM/DSP/Lib"
+    "Drivers/STM32G4xx_HAL_Driver/Src"
   ],
   "virtualFolder": {
     "name": "<virtual_root>",
     "files": [
+      {
+        "path": "Middlewares/ST/ARM/DSP/Lib/libarm_cortexM4lf_math.a"
+      },
       {
         "path": "startup_stm32g474xx.s"
       }
@@ -62,11 +64,12 @@
           "Core/Inc",
           "Drivers/CMSIS/Include",
           "Drivers/CMSIS/Device/ST/STM32G4xx/Include",
-          "Drivers/STM32G4xx_HAL_Driver/Inc",
           "Core/APP",
           "Core/lib",
           "Core/TASK",
-          "Middlewares/ST/ARM/DSP/Inc"
+          "Middlewares/ST/ARM/DSP/Inc",
+          "Drivers/STM32G4xx_HAL_Driver/Inc",
+          "Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"
         ],
         "libList": [
           "Core/Inc"

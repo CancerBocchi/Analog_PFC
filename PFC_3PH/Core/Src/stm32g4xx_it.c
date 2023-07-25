@@ -22,6 +22,7 @@
 #include "stm32g4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,6 +59,8 @@
 extern DMA_HandleTypeDef hdma_adc1;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
+extern HRTIM_HandleTypeDef hhrtim1;
+extern DMA_HandleTypeDef hdma_uart4_tx;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -215,6 +218,23 @@ void DMA1_Channel1_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles DMA1 channel2 global interrupt.
+  */
+void DMA1_Channel2_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel2_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_uart4_tx);
+  /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
+  huart4.gState = HAL_UART_STATE_READY;
+  hdma_uart4_tx.State = HAL_DMA_STATE_READY;
+  __HAL_UNLOCK(&hdma_uart4_tx);
+
+  /* USER CODE END DMA1_Channel2_IRQn 1 */
+}
+
+/**
   * @brief This function handles ADC1 and ADC2 global interrupt.
   */
 void ADC1_2_IRQHandler(void)
@@ -227,6 +247,20 @@ void ADC1_2_IRQHandler(void)
   /* USER CODE BEGIN ADC1_2_IRQn 1 */
 
   /* USER CODE END ADC1_2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles HRTIM timer A global interrupt.
+  */
+void HRTIM1_TIMA_IRQHandler(void)
+{
+  /* USER CODE BEGIN HRTIM1_TIMA_IRQn 0 */
+
+  /* USER CODE END HRTIM1_TIMA_IRQn 0 */
+  HAL_HRTIM_IRQHandler(&hhrtim1,HRTIM_TIMERINDEX_TIMER_A);
+  /* USER CODE BEGIN HRTIM1_TIMA_IRQn 1 */
+
+  /* USER CODE END HRTIM1_TIMA_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

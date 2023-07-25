@@ -6,6 +6,7 @@
 #include "main.h"
 #include "arm_math.h"
 #include "hrtim.h"
+//#include "usart.h"
 #include "adc.h"
 
 /*基本模块*/
@@ -17,6 +18,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include "time.h"
 
 /*常用算法模块*/
 #include "PID.h"

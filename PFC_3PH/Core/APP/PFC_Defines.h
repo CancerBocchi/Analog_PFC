@@ -5,5 +5,5 @@
 
 
 #define PFC_SPLL_FRE 40000.0f
-#define PFC_GRID_FRE 50.0f
+#define PFC_GRID_FRE 200.0f
 
